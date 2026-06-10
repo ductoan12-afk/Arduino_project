@@ -1,0 +1,8 @@
+# Nguyên Lý Hoạt Động 
+
+Hệ thống vận hành dựa trên sự phối hợp giữa ba khối chức năng chính:
+
+1. **Khối cảm biến (DHT11):** Đo đạc nhiệt độ và độ ẩm của môi trường, sau đó chuyển đổi thành tín hiệu số và truyền về chân số 2 của Arduino.
+2. **Khối xử lý (Arduino Uno R3):** Nhận dữ liệu từ cảm biến định kỳ mỗi 2 giây, phân tích và so sánh thông số thực tế với các ngưỡng an toàn được thiết lập sẵn trong mã nguồn.
+3. **Khối hiển thị & Cảnh báo (LCD & LED):** * Truyền dữ liệu qua giao thức I2C (chân A4, A5) để hiển thị thông số lên màn hình LCD 16x2.
+   * Nếu nhiệt độ vượt quá 40°C hoặc dưới 5°C, hoặc độ ẩm vượt quá 95% hoặc dưới 20%, Arduino sẽ xuất lệnh kích hoạt chân số 8 để bật sáng đèn LED và hiển thị cảnh báo nguy hiểm lên màn hình. Khi thông số an toàn, đèn tự động tắt.
